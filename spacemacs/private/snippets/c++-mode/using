@@ -1,0 +1,5 @@
+#name : using namespace ... 
+# key: us
+# --
+using $0;
+

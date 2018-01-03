@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: test_function
+# key: tfn
+# group : testing
+# --
+def test_{$1}($2):

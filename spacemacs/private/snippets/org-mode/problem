@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: problem
+# key: prob
+# --
+\begin{problem*}
+\hfill
+
+$0
+\end{problem*}

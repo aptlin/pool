@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: libraries
+# key: libs
+# --
+# * Libraries
+
+
+import sys
+
+

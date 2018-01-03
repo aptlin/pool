@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: readLineOfInts
+# key: ints
+# --
+def readLine():
+    return input().split()
+
+
+def readLineOfInts():
+    return list(map(int, readLine()))

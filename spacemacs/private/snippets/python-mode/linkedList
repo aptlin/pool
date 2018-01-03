@@ -1,0 +1,26 @@
+# -*- mode: snippet -*-
+# name: linkedList
+# key: linked
+# --
+class Node:
+    def __init__(self, value=None, next=None):
+        self.value = None
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.first = None
+        self.last = None
+
+    def insert(self, value):
+        if self.first is None:
+            self.first = Node(value)
+            self.last = self.first
+        elif self.last == self.first:
+            self.last = Node(value)
+            self.first.next = self.last
+        else:
+            currentNode = Node(value)
+            self.last.next = currentNode
+            self.last = currentNode

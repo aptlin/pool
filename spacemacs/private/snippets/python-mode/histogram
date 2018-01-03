@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# name: histogram
+# key: hist
+# --
+import sys
+from collections import defaultdict
+
+def readLines():
+    return list(map(lambda x: x.strip().split(), sys.stdin.readlines()))
+
+
+def readWords():
+    words = []
+    for line in readLines():
+        words += line
+    return words
+
+
+def histogram(words):
+    frequencies = defaultdict(int)
+    for word in words:
+        frequencies[word] += 1
+    return frequencies

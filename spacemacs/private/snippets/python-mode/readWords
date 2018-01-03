@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: readWords
+# key: words
+# --
+def readLists():
+    return list(map(lambda x: x.strip().split(), sys.stdin.readlines()))
+
+def readWords():
+    words = []
+    for line in readLines():
+        words += line
+    return words

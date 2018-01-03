@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: vector_lib
+# key: vl
+# --
+#include <vector>

@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: test_vector
+# key: tvec
+# --
+template <typename T>
+std::vector<std::vector<T> > getGrid(const std::size_t& nrows, const std::size_t& ncols) {
+    std::vector<std::vector<T> > grid;
+    for (size_t nrow = 0; nrow < nrows; ++nrow) {
+        std::vector<T> row;
+        for (size_t ncol = 0; ncol < ncols; ++ncol) {
+            T entry;
+            std::cin >> entry;
+            row.push_back(entry);
+        }
+        grid.push_back(row);
+    }
+    return grid;
+}

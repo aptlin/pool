@@ -1,0 +1,2 @@
+#!/bin/sh
+exec sudo docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/data sdll/latex "$@"

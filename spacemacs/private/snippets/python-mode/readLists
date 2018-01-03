@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: readLists
+# key: lists
+# --
+def readLists():
+    return list(map(lambda x: x.strip().split(), sys.stdin.readlines()))

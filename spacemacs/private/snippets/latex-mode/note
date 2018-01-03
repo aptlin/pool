@@ -1,0 +1,36 @@
+# -*- mode: snippet -*-
+# name: note_template
+# key: note
+# --
+% -*- coding: utf-8; -*-
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% TeX-master: t
+%%% End:
+\documentclass[11pt]{scrartcl}
+\usepackage[fancy, beaue, pset, anon]{masty}
+\pSet{\nt{$1}{$2}{$3}}
+
+\allowdisplaybreaks
+% ----------------------------------------------------------------------
+% Page Setup
+% ----------------------------------------------------------------------
+
+\pagenumbering{gobble}
+
+% ----------------------------------------------------------------------
+% Custom Commands
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+% Launch!
+% ----------------------------------------------------------------------
+
+\begin{document}
+
+\section{$3}
+
+  $0
+
+\end{document}

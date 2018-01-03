@@ -1,0 +1,12 @@
+sudo xhost local:root
+sudo docker run -ti --rm \
+     --name libreoffice \
+     -e DISPLAY=$DISPLAY \
+     -e GDK_SCALE=2 \
+     -e GDK_DPI_SCALE=2 \
+     -e QT_AUTO_SCREEN_SCALE_FACTOR=2 \
+     -v $('pwd'):/root/werke \
+     -v /etc/localtime:/etc/localtime:ro \
+     -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket \
+     -v /tmp/.X11-unix:/tmp/.X11-unix \
+     sdll/libreoffice

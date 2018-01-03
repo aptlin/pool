@@ -1,0 +1,23 @@
+* Latex Docker Container
+  /Inspired by [[https://github.com/blang/latex-docker][blang]]/.
+
+** Setup
+
+   To set up the image, you can pull it [[https://hub.docker.com/u/sdll/][from Hub]]:
+
+#+BEGIN_SRC sh
+docker pull sdll/latex
+#+END_SRC
+
+or build locally:
+
+#+BEGIN_SRC sh
+docker build -t sdll/latex .
+#+END_SRC
+
+** Usage:
+
+To compile a file named ~example.tex~ in the current directory,
+#+BEGIN_SRC sh
+  ltx /bin/sh -c "pdflatex example.tex && pdflatex example.tex"
+#+END_SRC

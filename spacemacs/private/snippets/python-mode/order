@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: order
+# key: order
+# --
+def order(firstObject, secondObject, compare=None):
+    if compare is None:
+        if firstObject < secondObject:
+            return firstObject, secondObject
+        else:
+            return secondObject, firstObject
+    else:
+        if compare(firstObject, secondObject):
+            return firstObject, secondObject
+        else:
+            return secondObject, firstObject

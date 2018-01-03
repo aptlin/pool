@@ -1,0 +1,44 @@
+FROM spacemacs/emacs25:develop
+LABEL maintainer "Sasha Illarionov <sasha.delly@gmail.com>"
+ENV UNAME="sdll"
+
+# Ubuntu
+
+RUN apt-get update
+
+# C++
+RUN apt-get install clang
+RUN apt-get install clang-format
+RUN apt-get install cppcheck
+
+# Python
+RUN apt-get install python3-pip
+RUN pip3 install --upgrade "jedi>=0.9.0" "json-rpc>=1.8.1" "service_factory>=0.1.5"
+RUN pip3 install flake8
+RUN pip3 install autoflake
+RUN pip3 install hy
+
+# Haskell
+RUN apt-get install wget libtinfo-dev haskell-platform
+RUN cabal update
+RUN cabal install apply-refact
+RUN cabal install hlint
+RUN cabal --force-reinstalls install stylish-haskell
+RUN cabal --force-reinstalls install hasktags
+RUN cabal --force-reinstalls install hoogle
+
+# Utilities
+RUN apt-get install silversearcher-ag
+
+COPY private "${UHOME}/.emacs.d/private"
+COPY .spacemacs "${UHOME}/.spacemacs"
+
+# Install Spacemacs layers dependencies and init user
+RUN install-deps
+
+USER $UNAME
+RUN git config --global user.name sdll
+RUN git config --global user.email shura.sdll@gmail.com
+USER root
+
+RUN rm -rf /tmp/* /var/lib/apt/lists/*

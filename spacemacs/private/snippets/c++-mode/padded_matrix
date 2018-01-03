@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: Padded Matrix
+# key: padmat
+# --
+template <typename T>
+std::vector<std::vector<T> > paddedMatrix(
+    const std::vector<std::vector<T> >& matrix, std::size_t& offset) {
+    std::vector<T> gap(offset + matrix.size() + offset);
+    std::vector<std::vector<T> > ret;
+    ret.push_back(gap);
+    for (auto row : matrix) {
+        std::vector<T> augmentedRow(offset);
+        augmentedRow.push_back(row);
+        augmentedRow.insert(augmentedRow.end(), offset, 0);
+        ret.push_back(augmentedRow);
+    }
+    ret.push_back(gap);
+    return ret;
+}

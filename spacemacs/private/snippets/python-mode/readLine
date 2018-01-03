@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: readLine
+# key: line
+# --
+def readLine():
+    return input().split()

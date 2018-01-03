@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: cpp
+# key: cpp
+# --
+\lstset { %
+    language=C++,
+    backgroundcolor=\color{black!5}, % set backgroundcolor
+    basicstyle=\footnotesize,% basic font setting
+}

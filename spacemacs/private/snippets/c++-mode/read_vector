@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name:read_vector
+# key: rvec
+# --
+std::copy(std::istream_iterator<std::size_t>(std::cin),
+          std::istream_iterator<std::size_t>(),
+          std::back_inserter($1));

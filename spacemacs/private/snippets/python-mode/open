@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: open
+# key: open
+# group: coding
+# --
+with open("input.txt", 'r', encoding='utf-8') as f:

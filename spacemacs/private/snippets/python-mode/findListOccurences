@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: listOccur
+# key: listOccur
+# --
+def findOccurences(givenList, element):
+    indices = []
+    if len(givenList) == 0:
+        return indices
+    else:
+        if element in givenList:
+            maxIndex = givenList.index(element)
+            indices.append(maxIndex)
+            if maxIndex != len(givenList) - 1:
+                indices += findOccurences(givenList[maxIndex + 1:],
+                                          element)
+            return indices
+        else:
+            return indices
