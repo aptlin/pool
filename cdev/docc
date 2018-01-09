@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo docker run -ti --rm -v $('pwd'):/data -e DISPLAY=$DISPLAY --name cdev cdev
+sudo chown sdll:sdll -R $PWD
