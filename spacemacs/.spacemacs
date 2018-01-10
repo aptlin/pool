@@ -37,7 +37,10 @@ values."
      haskell
      python
      colors
-     (c-c++ :variables c-c++-default-mode-for-headers'c++-mode)
+     (c-c++ :variables
+            c-c++-default-mode-for-headers c++-mode
+            c-c++-enable-google-style t
+            c-c++-enable-google-newline t)
      dash
      emacs-lisp
      evil-snipe

@@ -39,6 +39,8 @@ RUN install-deps
 USER $UNAME
 RUN git config --global user.name sdll
 RUN git config --global user.email shura.sdll@gmail.com
+RUN mkdir ${UHOME}/.git
+RUN git config credential.helper 'cache --timeout=86400'
 USER root
 
 RUN rm -rf /tmp/* /var/lib/apt/lists/*

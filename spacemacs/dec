@@ -1,0 +1,17 @@
+#!/bin/bash
+EMACS_HOMEDIR=~/pool/spacemacs/emacs
+sudo xhost +si:localuser:$(id -u -n)
+sudo docker run -ti --rm \
+     --name spacemacs$(date +"%s") \
+     -e DISPLAY=$DISPLAY \
+     -v $('pwd'):/mnt/workspace \
+     -v $EMACS_HOMEDIR:/home/emacs \
+     -v /etc/localtime:/etc/localtime:ro \
+     -v /tmp/.X11-unix:/tmp/.X11-unix \
+     -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket \
+     -v ~/.gnupg:${UHOME}/.gnupg \
+     -v ~/.ssh/id_rsa:${UHOME}/.ssh/id_rsa:ro \
+     spacemacs
+# -e GDK_SCALE=2 \
+# -e GDK_DPI_SCALE=2 \
+# -e QT_AUTO_SCREEN_SCALE_FACTOR=2 \
