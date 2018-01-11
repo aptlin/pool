@@ -11,7 +11,10 @@ RUN apt-get update -qq && apt-get install -y --no-install-recommends \
     build-essential \
     ca-certificates \
     cmake \
-    clang 
+    clang \
+    gdb \
+    valgrind \
+    bsdmainutils
 
 # set up cpplint
 RUN apt-get install -y python3-pip
